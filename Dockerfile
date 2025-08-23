@@ -1,4 +1,3 @@
-
 # Use NGINX as the base image
 FROM nginx:alpine
 
