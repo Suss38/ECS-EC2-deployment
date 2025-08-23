@@ -1,14 +1,12 @@
-# Use an official Nginx image from Docker Hub
+Filbert Nana Blessing
+12:50
+# Use NGINX as the base image
 FROM nginx:alpine
 
-# Set the working directory inside the container
-WORKDIR /usr/share/nginx/html
+# Copy your index.html into the NGINX default directory
+COPY index.html /usr/share/nginx/html/index.html
 
-# Remove default Nginx page
-RUN rm -rf ./*
-
-
-# Expose port 80 so we can access the app
+# Expose port 80
 EXPOSE 80
 
-# Nginx runs automatically, no CMD needed
+# NGINX will run automatically from the base image
