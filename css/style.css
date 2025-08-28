@@ -2,15 +2,15 @@
 # General
 --------------------------------------------------------------*/
 :root {
-  --primary-color: #0563bb;
+  --primary-color: #bba005;
   --secondary-color: #2c4964;
-  --accent-color: #f5a623;
+  --accent-color: #f523d2;
   --text-color: #444444;
   --light-text: #f8f9fa;
   --dark-bg: #1f2d3d;
   --light-bg: #f8f9fa;
   --gray-bg: #f5f8fd;
-  --border-color: #e9ecef;
+  --border-color: #e9efef;
   --box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 }
 
