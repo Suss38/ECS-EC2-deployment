@@ -1,44 +1,50 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-2:985869370255:task-definition/ecs-ec2-task-definition:1",
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
     "containerDefinitions": [
         {
-            "name": "ecs-ec2-container",
-            "image": "985869370255.dkr.ecr.us-east-2.amazonaws.com/suss/ecs-ec2",
             "cpu": 0,
-            "portMappings": [
-                {
-                    "name": "ecs-ec2-container-80-tcp",
-                    "containerPort": 80,
-                    "hostPort": 80,
-                    "protocol": "tcp",
-                    "appProtocol": "http"
-                }
-            ],
-            "essential": true,
             "environment": [],
             "environmentFiles": [],
-            "mountPoints": [],
-            "volumesFrom": [],
-            "ulimits": [],
+            "essential": true,
+            "image": "985869370255.dkr.ecr.us-east-2.amazonaws.com/suss/ecs-ec2",
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/ecs-ec2-task-definition",
+                    "awslogs-group": "/ecs/fargate-ecs-task-definition",
                     "awslogs-create-group": "true",
                     "awslogs-region": "us-east-2",
                     "awslogs-stream-prefix": "ecs"
                 },
                 "secretOptions": []
             },
-            "systemControls": []
+            "mountPoints": [],
+            "name": "fargate-ecs-container",
+            "portMappings": [
+                {
+                    "appProtocol": "http",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "name": "fargate-ecs-container-80-tcp",
+                    "protocol": "tcp"
+                }
+            ],
+            "systemControls": [],
+            "ulimits": [],
+            "volumesFrom": []
         }
     ],
-    "family": "ecs-ec2-task-definition",
+    "cpu": "1024",
+    "enableFaultInjection": false,
     "executionRoleArn": "arn:aws:iam::985869370255:role/ecsTaskExecutionRole",
+    "family": "fargate-ecs-task-definition",
+    "memory": "3072",
     "networkMode": "awsvpc",
-    "revision": 1,
-    "volumes": [],
-    "status": "ACTIVE",
+    "placementConstraints": [],
+    "registeredAt": "2025-09-13T13:08:38.732Z",
+    "registeredBy": "arn:aws:iam::985869370255:user/SueSappor",
     "requiresAttributes": [
         {
             "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
@@ -65,22 +71,19 @@
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
-    "placementConstraints": [],
-    "compatibilities": [
-        "EC2",
-        "FARGATE"
-    ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "1024",
-    "memory": "3072",
+    "revision": 1,
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-08-23T10:27:51.697Z",
-    "registeredBy": "arn:aws:iam::985869370255:user/SueSappor",
-    "enableFaultInjection": false,
+    "status": "ACTIVE",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:985869370255:task-definition/fargate-ecs-task-definition:1",
+    "volumes": [],
     "tags": []
 }
+
+
+
